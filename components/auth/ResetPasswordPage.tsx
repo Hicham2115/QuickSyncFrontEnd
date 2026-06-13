@@ -52,7 +52,7 @@ export function ResetPasswordPage() {
       });
       return res.data;
     },
-    onSuccess: () => {
+    onSuccess: () => { 
       toast.success("Mot de passe réinitialisé ! Vous pouvez maintenant vous connecter.");
       router.push("/");
     },
