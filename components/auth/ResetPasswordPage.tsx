@@ -109,7 +109,7 @@ export function ResetPasswordPage() {
           <div className="flex items-center gap-2 mb-6">
             <LogoMark size={32} />
             <span className="font-display text-lg font-semibold tracking-tight text-white">
-              WorkSync
+              QuickSync
             </span>
           </div>
           <h2 className="font-display font-medium text-white text-[1.6rem] leading-tight mb-1.5">
