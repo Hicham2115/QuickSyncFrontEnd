@@ -31,7 +31,13 @@ const inputStyle = {
   border: "1px solid rgba(255,255,255,0.10)",
 };
 
-export function SignInForm({ onSwitch , ResetPassword}: { onSwitch: () => void; ResetPassword: () => void }) {
+export function SignInForm({
+  onSwitch,
+  ResetPassword,
+}: {
+  onSwitch: () => void;
+  ResetPassword: () => void;
+}) {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
@@ -44,13 +50,8 @@ export function SignInForm({ onSwitch , ResetPassword}: { onSwitch: () => void; 
     },
 
     onSuccess: (data) => {
-      console.log("[login] onSuccess data:", JSON.stringify(data));
-      if (!data?.token) {
-        toast.error("Réponse inattendue du serveur. Réessayez.");
-        return;
-      }
+      console.log("[login] onSuccess:", data);
       localStorage.setItem("auth_token", data.token);
-      if (data.user) localStorage.setItem("auth_user", JSON.stringify(data.user));
       toast.success(`Bon retour, ${data.user?.CompleteName ?? "!"}`);
       router.push("/dashboard");
     },

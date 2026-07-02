@@ -119,15 +119,12 @@ function TrainingModal({ open, onClose, employeeId, editing }: {
                 <input value={form.provider ?? ""} onChange={e => set("provider", e.target.value)} placeholder="Coursera, OFPPT…" className={inputCls(false)} />
               </Field>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <Field label="Date de début">
                 <AppDatePicker value={form.started_at ?? ""} onChange={v => set("started_at", v || null)} placeholder="jj/mm/aaaa" />
               </Field>
               <Field label="Date de fin">
                 <AppDatePicker value={form.completed_at ?? ""} onChange={v => set("completed_at", v || null)} placeholder="jj/mm/aaaa" />
-              </Field>
-              <Field label="Date d'expiration">
-                <AppDatePicker value={form.expiry_date ?? ""} onChange={v => set("expiry_date", v || null)} placeholder="jj/mm/aaaa" />
               </Field>
             </div>
             <Field label="Statut">
